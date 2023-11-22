@@ -4,6 +4,8 @@ export const metadata = {
     title: "Contacto",
   }
 
+
+
 export default function BookLayout({ children }) {
     return (
         <>
@@ -15,11 +17,12 @@ export default function BookLayout({ children }) {
                         <Link href="/contact/book">Book</Link>
                     </li>
                     <li>
-                        <Link href="/contact/book/info">Info</Link>
+                        <Link href="/contact/info">Info</Link>
                     </li>
                 </ul>
             </nav>
             {children}
+
         </>
     )
 }
