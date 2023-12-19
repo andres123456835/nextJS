@@ -1,0 +1,25 @@
+import Header from './components/Header';
+import HeroSection from './components/HeroSection';
+import SearchBar from './components/SearchBar';
+export default function Home() {
+    const handleSearch = (searchTerm) => {
+        // Aquí puedes manejar la lógica de búsqueda o redirigir al usuario a una página de resultados
+        console.log('Buscando:', searchTerm);
+      };
+    return (
+        <div>
+            <div>
+                <Header usuarioLogueado={false} /> {/* Cambia esto según el estado de autenticación */}
+                {/* Resto del contenido de tu página */}
+            </div>
+            <div>
+                <HeroSection />
+                {/* Otros componentes o secciones de tu página */}
+            </div>
+            <div>
+                <SearchBar onSearch={handleSearch} />
+                {/* Otros componentes o secciones de tu página */}
+            </div>
+        </div>
+    );
+}
