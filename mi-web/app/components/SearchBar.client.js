@@ -1,14 +1,14 @@
-// Importa dynamic de Next.js
-import dynamic from 'next/dynamic';
-import { useState } from 'react';
+// app/components/SearchBar.client.js
+/*import { useState } from 'react';
 
-// Define el componente de búsqueda normalmente.
-const SearchBar = ({ onSearch }) => {
+export default function SearchBar({ onSearch }) {
   const [searchTerm, setSearchTerm] = useState('');
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    onSearch(searchTerm);
+    if (onSearch) {
+      onSearch(searchTerm);
+    }
   };
 
   return (
@@ -30,9 +30,4 @@ const SearchBar = ({ onSearch }) => {
       </form>
     </div>
   );
-};
-
-// Exporta el componente envuelto por dynamic y configura { ssr: false } para deshabilitar el Server-Side Rendering para este componente.
-export default dynamic(() => Promise.resolve(SearchBar), {
-  ssr: false,
-});
+}*/
