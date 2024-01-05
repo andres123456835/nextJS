@@ -1,6 +1,5 @@
 const businesses = [
-    { id: 1, name: 'Negocio 1' },
-    { id: 2, name: 'Negocio 2' },
+    { id: 1, name: 'Negocio 1', CIF:'prueba', direccion:'madrid', email:'prueba@prueba.es', telefono:'123456789' },
     // Más negocios...
 ];
 

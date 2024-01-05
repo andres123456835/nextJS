@@ -4,6 +4,10 @@ import React, { useState } from 'react';
 const AddBusinessForm = () => {
     const [formData, setFormData] = useState({
         name: '',
+        CIF:'',
+        direccion:'',
+        email:'',
+        telefono:'',
         description: '',
         // otros campos según sea necesario
     });
@@ -44,6 +48,38 @@ const AddBusinessForm = () => {
                 value={formData.name}
                 onChange={handleChange}
                 placeholder="Nombre del negocio"
+                required
+            />
+            <input
+                type="text"
+                name="CIF"
+                value={formData.CIF}
+                onChange={handleChange}
+                placeholder="CIF del negocio"
+                required
+            />
+            <input
+                type="text"
+                name="direccion"
+                value={formData.direccion}
+                onChange={handleChange}
+                placeholder="direccion del negocio"
+                required
+            />
+            <input
+                type="text"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="Email del negocio"
+                required
+            />
+            <input
+                type="text"
+                name="telefono"
+                value={formData.telefono}
+                onChange={handleChange}
+                placeholder="telefono del negocio"
                 required
             />
             <textarea
