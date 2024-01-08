@@ -27,7 +27,7 @@ const LoginPage = () => {
             });
             const data = await response.json();
             console.log(data); // Aquí puedes manejar la respuesta
-            if(response.status == 200 && formData.email=="hola@hola.com"){
+            if(response.status == 200 && formData.email=="admin@admin.com"){
                 setirabusiness("/admin/add-business");
             }
         } catch (error) {
