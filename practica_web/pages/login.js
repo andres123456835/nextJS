@@ -1,3 +1,4 @@
+import jwt_decode from 'jwt-decode';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 
@@ -31,12 +32,16 @@ const LoginPage = () => {
             if(response.ok){
                 const {token} = await response.json();
                 localStorage.setItem('token', token);
-                if(response.status == 200 && formData.email=="admin@admin.com"){
+                // Decodificar el token para obtener el rol
+                const decoded = jwt_decode(token);
+                const userRole = decoded.role;
+                // Redirigir al usuario según su rol
+                if (userRole === 'admin') {
                     router.push('../admi');
-                }
-                else if(response.status == 200){
-                     // Aquí puedes manejar la respuesta
-                    router.push('../profile');
+                } else if (userRole === 'customer') {
+                    router.push('../profile_Customer');
+                } else if (userRole === 'merchant') {
+                    router.push('../Profile_Merchant');
                 }
             }
            

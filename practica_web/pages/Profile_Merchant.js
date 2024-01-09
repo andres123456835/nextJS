@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import LogoutButton from '../components/LogoutButton';
 
-const ProfilePage = () => {
+const ProfilePage_merchant = () => {
     const [userProfile, setUserProfile] = useState(null);
     const router = useRouter();
 
@@ -54,4 +54,4 @@ const ProfilePage = () => {
     );
 };
 
-export default ProfilePage;
+export default ProfilePage_merchant;

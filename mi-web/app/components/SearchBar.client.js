@@ -1,5 +1,5 @@
 // app/components/SearchBar.client.js
-/*import { useState } from 'react';
+import { useState } from 'react';
 
 export default function SearchBar({ onSearch }) {
   const [searchTerm, setSearchTerm] = useState('');
@@ -30,4 +30,4 @@ export default function SearchBar({ onSearch }) {
       </form>
     </div>
   );
-}*/
+}

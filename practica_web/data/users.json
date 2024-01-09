@@ -2,55 +2,15 @@
   {
     "id": 1,
     "name": "admin",
-    "email": "admin@admin.com",
-    "password": "$2a$12$AsQK17y3T4rWQ6bSxeBVmOv2naRgQJ7YlSJuRDhqhIWP18JGVuZue",
+    "email": "admin@admin.es",
+    "password": "$2a$12$NvcreI7NaLcDbfFF1Pfa8ur/c2ShI8X2x/qHke5eHOetwTaLEMpaW",
     "role": "admin"
   },
   {
     "id": 2,
-    "name": "aina",
-    "email": "aina@aina.com",
-    "password": "$2a$12$yqNpiekONdPRUqhmRsSDm.GZX0SfjYjh3vkHALZxbWo3AjZhdVx4O"
-  },
-  {
-    "id": 3,
     "name": "hola",
-    "email": "hola@adios.com",
-    "password": "$2a$12$m4lBQPQSwTV8yOH6NfJ60uSWsPiO4XF53QHKrs4mu2hu9Z6zvnETe"
-  },
-  {
-    "id": 4,
-    "name": "andres",
-    "email": "andres@andres.com",
-    "password": "$2a$12$3d7SOgeoqQUJ8H1w5/HoDeD9EgYRUUyK0SVdz60LaWu6F7fw9vO7m",
-    "role": ""
-  },
-  {
-    "id": 5,
-    "name": "raquel",
-    "email": "raquel@raquel.com",
-    "password": "$2a$12$N8mqCWZ7EoSn6gY/clhcTOAj29kh.OTNmFTJBnhW0kXHxu/hh.nXu",
-    "role": ""
-  },
-  {
-    "id": 6,
-    "name": "silvia",
-    "email": "silvia@silvia.com",
-    "password": "$2a$12$oVO5dK2K.uwOVOnwIKimuOFcqid7s452mpR2L9bDR3mggtb0DHuAa",
-    "role": ""
-  },
-  {
-    "id": 7,
-    "name": "ricardo",
-    "email": "ricardo@ricardo",
-    "password": "$2a$12$WrxS0buv8DCyv69lT0OUV.opgZZeL0Hp14pRZarjas0S7y/oKDvci",
-    "role": ""
-  },
-  {
-    "id": 8,
-    "name": "ricardo",
-    "email": "ricardo@ricardo.com",
-    "password": "$2a$12$0J6o5GLFWfTkO0nkZpREHuOdSjbxF1dKe7R4EZ28YP6mA.vOjeQS6",
-    "role": ""
+    "email": "hola@hola.es",
+    "password": "$2a$12$43eGirzDzf4z6B9sTLdKbeIvP326nFmgeJnae1bR0ifPi/WJknr7W",
+    "role": "customer"
   }
 ]
