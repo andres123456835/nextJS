@@ -7,7 +7,7 @@ export default async function handler(req, res) {
         return res.status(405).json({ message: 'Método no permitido' });
     }
 
-    const { name, email, password } = req.body;
+    const { name, email, password, role } = req.body;
 
     // Definir la ruta al archivo JSON
     const filePath = path.join(process.cwd(), 'data', 'users.json');
@@ -25,8 +25,17 @@ export default async function handler(req, res) {
     const hashedPassword = await hash(password, 12);
 
     // Crear el nuevo usuario y añadirlo a la lista
-    const newUser = { id: users.length + 1, name, email, password: hashedPassword };
+    // Crear el nuevo usuario con el rol y añadirlo a la lista
+    const newUser = { 
+        id: users.length + 1, 
+        name, 
+        email, 
+        password: hashedPassword,
+        role // Añadiendo el rol aquí
+    };
     users.push(newUser);
+    
+    
 
     // Guardar la nueva lista de usuarios en el archivo
     fs.writeFileSync(filePath, JSON.stringify(users, null, 2));

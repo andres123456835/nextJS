@@ -1,6 +1,8 @@
 import { useState } from 'react';
+import { useRouter } from 'next/router';
 
 const LoginPage = () => {
+    const router = useRouter();
     const [formData, setFormData] = useState({
         email: '',
         password: '',
@@ -23,13 +25,21 @@ const LoginPage = () => {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(formData),
+                body: JSON.stringify({ email: formData.email, password: formData.password }),
             });
-            const data = await response.json();
-            console.log(data); // Aquí puedes manejar la respuesta
-            if(response.status == 200 && formData.email=="admin@admin.com"){
-                setirabusiness("/admin/add-business");
+            //const data = await response.json();
+            if(response.ok){
+                const {token} = await response.json();
+                localStorage.setItem('token', token);
+                if(response.status == 200 && formData.email=="admin@admin.com"){
+                    router.push('../admi');
+                }
+                else if(response.status == 200){
+                     // Aquí puedes manejar la respuesta
+                    router.push('../profile');
+                }
             }
+           
         } catch (error) {
             console.error(error);
         }
@@ -56,7 +66,7 @@ const LoginPage = () => {
                 />
                 <button type="submit">Iniciar sesión</button>
             </form>
-            <a href={irabusiness}>Ir a Business</a>
+
         </div>
     );
 };

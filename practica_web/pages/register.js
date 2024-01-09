@@ -5,12 +5,14 @@ const RegisterPage = () => {
         name: '',
         email: '',
         password: '',
+        role: '',
     });
 
     const [jsondata, setjsondata] = useState({
         name: '',
         email: '',
         password: '',
+        role: '',
     });
 
     const handleChange = (e) => {
@@ -37,6 +39,7 @@ const RegisterPage = () => {
                     name: '',
                     email: '',
                     password: '',
+                    role:'',
                 });
             }
             
@@ -73,12 +76,22 @@ const RegisterPage = () => {
                     onChange={handleChange}
                     required
                 />
+                <select 
+                    name="role" 
+                    value={formData.role} 
+                    onChange={handleChange} 
+                    required
+                >
+                    <option value="customer">Cliente</option>
+                    <option value="merchant">Comerciante</option>
+                </select>
                 <button type="submit">Registrarse</button>
             </form>
 
             <label>Nombre:{jsondata.name}</label><br/>
             <label>Password:{jsondata.password}</label><br/>
-            <label>Email:{jsondata.email}</label>
+            <label>Email:{jsondata.email}</label><br/>
+            <label>rol:{jsondata.role}</label>
         </div>
     );
 };
