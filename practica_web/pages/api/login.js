@@ -33,7 +33,7 @@ export default async function handler(req, res) {
     // Si las credenciales son correctas, genera un token incluyendo el rol
     const token = jwt.sign(
         { email: email, role: user.role },
-        'WEB', // Asegúrate de usar una clave secreta más segura en producción
+        'HOLA', // Asegúrate de usar una clave secreta más segura en producción
         { expiresIn: '1h' }
     );
 

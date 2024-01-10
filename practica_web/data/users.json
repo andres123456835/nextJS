@@ -10,7 +10,14 @@
     "id": 2,
     "name": "hola",
     "email": "hola@hola.es",
-    "password": "$2a$12$43eGirzDzf4z6B9sTLdKbeIvP326nFmgeJnae1bR0ifPi/WJknr7W",
+    "password": "$2a$12$5xty6pmvLwK36o4de1OPtu/tpAleaVQRL0LNx6a9m/3A/9kqvnox.",
     "role": "customer"
+  },
+  {
+    "id": 3,
+    "name": "aaa",
+    "email": "aa@aa",
+    "password": "$2a$12$PuEY5fmX.BvWse28EpY8uOjlPUpdmd8aaEjPij9xoPOx0BtUxT0E2",
+    "role": "merchant"
   }
 ]

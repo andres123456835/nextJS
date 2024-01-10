@@ -1,4 +1,4 @@
-import jwt_decode from 'jwt-decode';
+const jws = require('jws');
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 
@@ -14,9 +14,6 @@ const LoginPage = () => {
         setFormData({ ...formData, [name]: value });
     };
 
-    const [irabusiness,setirabusiness] = useState(
-        ""
-    );
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -28,13 +25,22 @@ const LoginPage = () => {
                 },
                 body: JSON.stringify({ email: formData.email, password: formData.password }),
             });
+           
             //const data = await response.json();
             if(response.ok){
                 const {token} = await response.json();
                 localStorage.setItem('token', token);
                 // Decodificar el token para obtener el rol
-                const decoded = jwt_decode(token);
-                const userRole = decoded.role;
+                console.log("Token:", token);
+                const decoded = jws.decode(token);
+                console.log("Decoded Token:", decoded);
+                if (!decoded) {
+                    throw new Error('Error decodificando el token');
+                }
+                const userRole = decoded.payload.role;
+                console.log("User Role is:", userRole);
+
+                console.log("User Role is " + userRole);
                 // Redirigir al usuario según su rol
                 if (userRole === 'admin') {
                     router.push('../admi');

@@ -11,7 +11,7 @@ export default function handler(req, res) {
             return res.status(401).send('Token no proporcionado');
         }
 
-        jwt.verify(token, 'WEB', (err, decodedUser) => {
+        jwt.verify(token, 'HOLA', (err, decodedUser) => {
             if (err) {
                 return res.status(403).send('Token inválido o expirado');
             }
