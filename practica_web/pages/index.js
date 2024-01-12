@@ -10,13 +10,13 @@ export default function Home() {
         // Aquí podrías hacer una llamada a una API para obtener los negocios
         // setBusinesses(response.data);
     }, []);
-
+   
     return (
         <div>
             <Header />
             <main>
                 <h1>Negocios Registrados</h1>
-                <BusinessList />
+                <BusinessList businesses={businesses} />
             </main>
             <Footer />
         </div>

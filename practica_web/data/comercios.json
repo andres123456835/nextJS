@@ -1,0 +1,10 @@
+[
+    {
+        "id": 1,
+        "name": "Comercio 1",
+        "CIF": "CIF12345",
+        "direccion": "Calle Falsa 123",
+        "email": "contacto@comercio1.com",
+        "telefono": "123456789"
+    }
+]

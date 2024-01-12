@@ -5,7 +5,17 @@ const businesses = [
 
 export default function handler(req, res) {
     if (req.method === 'GET') {
-        res.status(200).json(businesses);
+        const { id } = req.query;
+        if (id) {
+            const business = businesses.find(b => b.id === parseInt(id, 10));
+            if (business) {
+                res.status(200).json(business);
+            } else {
+                res.status(404).json({ message: 'Negocio no encontrado' });
+            }
+        } else {
+            res.status(200).json(businesses);
+        }
     } else if (req.method === 'POST') {
         // Obtener los datos enviados en la solicitud POST
         const newBusiness = req.body;

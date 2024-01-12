@@ -8,14 +8,13 @@ const BusinessList = () => {
             .then(response => response.json())
             .then(data => setBusinesses(data));
     }, []);
-
     return (
-        <ul>
-            {businesses.map(business => (
+            <ul>
+                {businesses.map(business => (
                 <li key={business.id}>{business.name}</li>
-            ))}
-        </ul>
-    );
-}
-
+                ))}
+            </ul>
+        );
+};
+    
 export default BusinessList;

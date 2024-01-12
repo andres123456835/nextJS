@@ -6,7 +6,7 @@ export default function Header() {
             <nav>
                 <a href="/">Inicio</a>
                 <a href="/about">Acerca de</a>
-                <Link href="/login">Perfil</Link>
+                <Link href="/login">Login</Link>
             </nav>
         </header>
     );
