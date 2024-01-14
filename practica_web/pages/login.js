@@ -45,7 +45,7 @@ const LoginPage = () => {
                 if (userRole === 'admin') {
                     router.push('../admi');
                 } else if (userRole === 'customer') {
-                    router.push('../profile_Customer');
+                    router.push('../profile_Costumer');
                 } else if (userRole === 'merchant') {
                     router.push('../Profile_Merchant');
                 }

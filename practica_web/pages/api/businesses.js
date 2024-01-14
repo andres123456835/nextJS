@@ -1,18 +1,30 @@
-const businesses = [
-    { id: 1, name: 'Negocio 1', CIF:'prueba', direccion:'madrid', email:'prueba@prueba.es', telefono:'123456789' },
+let businesses = [
+    
     // Más negocios...
 ];
 
 export default function handler(req, res) {
     if (req.method === 'GET') {
         const { id } = req.query;
-        if (id) {
+        /*if (id) {
             const business = businesses.find(b => b.id === parseInt(id, 10));
             if (business) {
                 res.status(200).json(business);
             } else {
                 res.status(404).json({ message: 'Negocio no encontrado' });
             }
+        } else */if(id){
+            const fil = businesses.filter(f => f.id != id)
+            businesses = fil.map(f  => ({
+                name: f.name,
+                CIF:f.CIF,
+                direccion:f.direccion,
+                email:f.email,
+                telefono:f.telefono,
+                description: f.description,
+            }))
+
+            res.status(200).json(businesses);
         } else {
             res.status(200).json(businesses);
         }

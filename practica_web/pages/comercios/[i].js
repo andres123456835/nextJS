@@ -8,6 +8,8 @@ const BusinessDetails = () => {
     const [business, setBusiness] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
+
+    
     useEffect(() => {
         console.log("id:",id)
         if (id) {
