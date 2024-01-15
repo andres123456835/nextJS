@@ -31,16 +31,13 @@ const LoginPage = () => {
                 const {token} = await response.json();
                 localStorage.setItem('token', token);
                 // Decodificar el token para obtener el rol
-                console.log("Token:", token);
+                
                 const decoded = jws.decode(token);
-                console.log("Decoded Token:", decoded);
+                
                 if (!decoded) {
                     throw new Error('Error decodificando el token');
                 }
                 const userRole = decoded.payload.role;
-                console.log("User Role is:", userRole);
-
-                console.log("User Role is " + userRole);
                 // Redirigir al usuario según su rol
                 if (userRole === 'admin') {
                     router.push('../admi');

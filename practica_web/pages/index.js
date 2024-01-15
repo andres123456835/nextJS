@@ -4,19 +4,19 @@ import Footer from '/components/Footer';
 import BusinessList from '/components/BusinessList';
 
 export default function Home() {
-    const [businesses, setBusinesses] = useState([]);
+    //const [businesses, setBusinesses] = useState([]);
 
-    useEffect(() => {
+    /*useEffect(() => {
         // Aquí podrías hacer una llamada a una API para obtener los negocios
         // setBusinesses(response.data);
-    }, []);
+    }, []);*/
    
     return (
         <div>
             <Header />
             <main>
                 <h1>Negocios Registrados</h1>
-                <BusinessList businesses={businesses} />
+                <BusinessList />
             </main>
             <Footer />
         </div>

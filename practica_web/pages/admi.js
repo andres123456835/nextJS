@@ -10,7 +10,7 @@ const AdminPage = ({ adminData }) => {
     };
 
     const goToBusinessList = () => {
-        router.push('/business-list');
+        router.push('/');
     };
     const [userAdmin, setUserAdmin] = useState(null);
     

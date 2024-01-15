@@ -28,7 +28,11 @@ export default function Detalle() {
                     businesses.map(business => (
                         <div>
                             <h1>NOMBRE: {business.name}</h1>
-                            <h1>ID :{business.id}</h1>
+                            <h1>NOMBRE: {business.CIF}</h1>
+                            <h1>NOMBRE: {business.direccion}</h1>
+                            <h1>NOMBRE: {business.email}</h1>
+                            <h1>NOMBRE: {business.telefono}</h1>
+                            <h1>NOMBRE: {business.description}</h1>
                         </div>
                     ))
                 }

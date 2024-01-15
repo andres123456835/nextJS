@@ -10,18 +10,29 @@ export default async function handler(req, res) {
 
     const { email, password } = req.body;
 
-    // Ruta al archivo JSON
-    const filePath = path.join(process.cwd(), 'data', 'users.json');
+    // Rutas a los archivos JSON
+    const usersFilePath = path.join(process.cwd(), 'data', 'users.json');
+    const merchantsFilePath = path.join(process.cwd(), 'data', 'comercios.json');
 
-    // Leer el archivo para obtener los usuarios existentes
-    const fileData = fs.readFileSync(filePath);
-    const users = JSON.parse(fileData);
+    // Leer los archivos para obtener los usuarios y comerciantes
+    const usersData = fs.readFileSync(usersFilePath);
+    const merchantsData = fs.readFileSync(merchantsFilePath);
+    const users = JSON.parse(usersData);
+    const merchants = JSON.parse(merchantsData);
 
-    // Buscar usuario por email
-    const user = users.find(user => user.email === email);
+
+    // Buscar usuario o comerciante por email
+    let user = users.find(user => user.email === email);
+    let role;
+    if (user) {
+        role = user.role;
+    }else{
+        user = merchants.find(merchant => merchant.email === email);
+        role = 'merchant';
+    }
 
     if (!user) {
-        return res.status(404).json({ message: 'Usuario no encontrado' });
+        return res.status(404).json({ message: 'Usuario o comerciante no encontrado' });
     }
 
     // Verificar la contraseña hasheada
@@ -32,7 +43,7 @@ export default async function handler(req, res) {
 
     // Si las credenciales son correctas, genera un token incluyendo el rol
     const token = jwt.sign(
-        { email: email, role: user.role },
+        { email: email, role: role },
         'HOLA', // Asegúrate de usar una clave secreta más segura en producción
         { expiresIn: '1h' }
     );

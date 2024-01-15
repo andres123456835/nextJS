@@ -1,10 +1,13 @@
 [
-    {
-        "id": 1,
-        "name": "Comercio 1",
-        "CIF": "CIF12345",
-        "direccion": "Calle Falsa 123",
-        "email": "contacto@comercio1.com",
-        "telefono": "123456789"
-    }
+  {
+    "id": 1,
+    "name": "Comercio 1",
+    "password": "$2a$10$K7XNeJMO6LgBMJA5raqd.OO1XcCqyH0tJg.epfWX3ZRB.Z6u1oZkm",
+    "CIF": "CIF12345",
+    "direccion": "Calle Falsa 123",
+    "email": "contacto@comercio1.com",
+    "telefono": "123456789",
+    "description": "a",
+    "role": "merchant"
+  }
 ]

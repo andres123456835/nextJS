@@ -16,7 +16,7 @@ const ProfilePage_merchant = () => {
 
         const fetchUserData = async () => {
             
-            const response = await fetch(`/api/user`, {
+            const response = await fetch(`/api/businesses`, {
                 headers: {
                 'Authorization': `Bearer ${token}`
                 }
@@ -26,6 +26,9 @@ const ProfilePage_merchant = () => {
                 setUserProfile(data);
             } else {
                 console.error('Error al cargar los datos del usuario');
+                if (response.status === 404) {
+                    console.error('Perfil no encontrado');
+                }
             }
         };
 
