@@ -34,7 +34,7 @@ export default function handler(req, res) {
     if (req.method === 'GET') {
         const authHeader = req.headers.authorization;
         const token = authHeader && authHeader.split(' ')[1];
-
+        const emailQuery = req.query.email; // Agregar soporte para un parámetro de consulta 'email'
         if (!token) {
             return res.status(401).send('Token no proporcionado');
         }
@@ -49,13 +49,26 @@ export default function handler(req, res) {
             const fileData = fs.readFileSync(filePath);
             const users = JSON.parse(fileData);
 
+             // Si se proporciona un email, devolver ese usuario específico
+             if (emailQuery) {
+                const user = users.find(u => u.email === emailQuery);
+                if (user) {
+                    return res.status(200).json(user);
+                } else {
+                    return res.status(404).json({ message: 'Usuario no encontrado' });
+                }
+            }
+
+            // De lo contrario, devolver todos los usuarios
+            res.status(200).json(users);
+
             // Buscar usuario por correo electrónico
-            const user = users.find(u => u.email === decodedUser.email);
+            /*const user = users.find(u => u.email === decodedUser.email);
             if (user) {
                 res.status(200).json(user);
             } else {
                 res.status(404).json({ message: 'Usuario no encontrado' });
-            }
+            }*/
         });
     } else if(req.method === 'PUT'){
         try {

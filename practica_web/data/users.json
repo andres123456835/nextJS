@@ -13,5 +13,13 @@
     "password": "$2a$12$iO71wcWOAKZ2vlc769RTguEkUTN9C8Fq3.wHALzFaKBcoU4cij.vi",
     "city": "madrid",
     "role": "customer"
+  },
+  {
+    "id": 2,
+    "name": "x",
+    "email": "x@x.es",
+    "password": "$2a$12$iO71wcWOAKZ2vlc769RTguEkUTN9C8Fq3.wHALzFaKBcoU4cij.vi",
+    "city": "barcelona",
+    "role": "customer"
   }
 ]
