@@ -3,8 +3,11 @@ import { useState, useEffect } from 'react';
 import LogoutButton from '../components/LogoutButton';
 
 const ProfilePage_merchant = () => {
-    const [userProfile, setUserProfile] = useState(null);
+    const [CostumerProfile, setCostumerProfile] = useState(null);
     const router = useRouter();
+
+    
+
 
     useEffect(() => {
         const token = localStorage.getItem('token');
@@ -23,7 +26,7 @@ const ProfilePage_merchant = () => {
             });
             if (response.ok) {
                 const data = await response.json();
-                setUserProfile(data);
+                setCostumerProfile(data);
             } else {
                 console.error('Error al cargar los datos del usuario');
                 if (response.status === 404) {
@@ -42,15 +45,15 @@ const ProfilePage_merchant = () => {
         router.push('/login');
     };
 
-    if (!userProfile) {
+    if (!CostumerProfile) {
         return <p>Cargando perfil...</p>;
     }
-
+    console.log("hola: ",CostumerProfile);
     return (
         <div>
-            <h1>Perfil de Usuario</h1>
-            <p>Nombre: {userProfile.name}</p>
-            <p>Email: {userProfile.email}</p>
+            <h1>Perfil de Comercio</h1>
+            <p>Nombre: {CostumerProfile.name}</p>
+            <p>Email: {CostumerProfile.email}</p>
             <LogoutButton onLogout={handleLogout} />
             {/* Aquí podrías añadir más información del perfil */}
         </div>

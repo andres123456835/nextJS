@@ -33,6 +33,7 @@ export default function Detalle() {
                             <h1>NOMBRE: {business.email}</h1>
                             <h1>NOMBRE: {business.telefono}</h1>
                             <h1>NOMBRE: {business.description}</h1>
+                            <a href="">Ir a </a>
                         </div>
                     ))
                 }

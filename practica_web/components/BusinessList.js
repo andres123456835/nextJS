@@ -10,15 +10,15 @@ const BusinessList = () => {
 
     useEffect(() => {
         const token = localStorage.getItem('token');
-        if (token) {
+        
+        if(token){
             const decoded = jws.decode(token);
             const userRole = decoded.payload.role;
             seteresadmin(userRole)
+        }    
 
             fetch('/api/businesses', {
-                headers: {
-                    'Authorization': `Bearer ${token}`
-                }
+                
             })
             .then(response => {
                 if (!response.ok) {
@@ -31,7 +31,7 @@ const BusinessList = () => {
                 console.error('Error al cargar comercios:', error);
                 // Manejar el error adecuadamente
             });
-        }
+        
     }, []);
 
     function ComerciosDetalles(id) {

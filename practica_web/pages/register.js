@@ -39,6 +39,7 @@ const RegisterPage = () => {
                     name: '',
                     email: '',
                     password: '',
+                    city:'',
                     role:'',
                 });
             }
@@ -75,6 +76,13 @@ const RegisterPage = () => {
                     value={formData.password}
                     onChange={handleChange}
                     required
+                /><input
+                type="city"
+                name="city"
+                placeholder="city"
+                value={formData.city}
+                onChange={handleChange}
+                required
                 />
                 <select 
                     name="role" 

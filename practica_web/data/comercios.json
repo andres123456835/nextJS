@@ -9,5 +9,16 @@
     "telefono": "123456789",
     "description": "a",
     "role": "merchant"
+  },
+  {
+    "name": "a",
+    "password": "$2a$10$rqeok0k1jzm8erY2U/t2ReTiD4985p3yklyA1FWmV1RPrJCHTLaIK",
+    "CIF": "a",
+    "direccion": "a",
+    "email": "a@a.es",
+    "telefono": "123456789",
+    "description": "hola\n",
+    "role": "merchant",
+    "id": 2
   }
 ]
