@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import React, { useState, useEffect } from 'react';
 const jws = require('jws');
 
-const BusinessList = () => {
+const BusinessList = ({ filterCity }) => {
     const [businesses, setBusinesses] = useState([]);
     const router = useRouter();
     const [eresadmin, seteresadmin] = useState("");
@@ -17,22 +17,26 @@ const BusinessList = () => {
             seteresadmin(userRole)
         }    
 
-            fetch('/api/businesses', {
-                
-            })
+            fetch('/api/businesses', {})
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Error en la solicitud');
                 }
                 return response.json();
             })
-            .then(data => setBusinesses(data))
+            .then(data => {
+                // Filtrar comercios si filterCity no está vacío
+                const filteredBusinesses = filterCity 
+                    ? data.filter(business => business.city.toLowerCase() === filterCity.toLowerCase()) 
+                    : data;
+                setBusinesses(filteredBusinesses);
+            })
             .catch(error => {
                 console.error('Error al cargar comercios:', error);
                 // Manejar el error adecuadamente
             });
         
-    }, []);
+    }, [filterCity]);
 
     function ComerciosDetalles(id) {
         //console.log(id);

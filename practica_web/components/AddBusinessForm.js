@@ -10,6 +10,7 @@ const AddBusinessForm = () => {
         email:'',
         telefono:'',
         description: '',
+        city:'',
         role:'merchant',
         // otros campos según sea necesario
     });
@@ -90,6 +91,14 @@ const AddBusinessForm = () => {
                 value={formData.telefono}
                 onChange={handleChange}
                 placeholder="telefono del negocio"
+                required
+            />
+            <input
+                type="text"
+                name="city"
+                value={formData.city}
+                onChange={handleChange}
+                placeholder="ciudad del negocio"
                 required
             />
             <textarea

@@ -4,19 +4,26 @@ import Footer from '/components/Footer';
 import BusinessList from '/components/BusinessList';
 
 export default function Home() {
-    //const [businesses, setBusinesses] = useState([]);
+    const [cityInput, setCityInput] = useState('');
+    const [filterCity, setFilterCity] = useState('');
 
-    /*useEffect(() => {
-        // Aquí podrías hacer una llamada a una API para obtener los negocios
-        // setBusinesses(response.data);
-    }, []);*/
+    const handleFilter = () => {
+        setFilterCity(cityInput);
+    };
    
     return (
         <div>
             <Header />
             <main>
                 <h1>Negocios Registrados</h1>
-                <BusinessList />
+                <input
+                    type="text"
+                    placeholder="Buscar por ciudad"
+                    value={cityInput}
+                    onChange={(e) => setCityInput(e.target.value)}
+                />
+                <button onClick={handleFilter}>Filtrar</button>
+                <BusinessList filterCity={filterCity} />
             </main>
             <Footer />
         </div>

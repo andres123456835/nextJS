@@ -7,7 +7,7 @@ export default async function handler(req, res) {
         return res.status(405).json({ message: 'Método no permitido' });
     }
 
-    const { name, email, password, role } = req.body;
+    const { name, email, password, city, role } = req.body;
 
     // Definir la ruta al archivo JSON
     const filePath = path.join(process.cwd(), 'data', 'users.json');
@@ -31,6 +31,7 @@ export default async function handler(req, res) {
         name, 
         email, 
         password: hashedPassword,
+        city,
         role // Añadiendo el rol aquí
     };
     users.push(newUser);

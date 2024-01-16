@@ -7,10 +7,11 @@
     "role": "admin"
   },
   {
-    "id": 2,
-    "name": "hola",
-    "email": "hola@hola.es",
-    "password": "$2a$12$ttS9VwCb.fpcCnV0Z5nPSuXjywePq6wuOlziiu8vFzPDlEiZXueXW",
+    "id": 3,
+    "name": "z",
+    "email": "z@z.es",
+    "password": "$2a$12$iO71wcWOAKZ2vlc769RTguEkUTN9C8Fq3.wHALzFaKBcoU4cij.vi",
+    "city": "madrid",
     "role": "customer"
   }
 ]

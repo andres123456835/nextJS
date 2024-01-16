@@ -8,6 +8,7 @@
     "email": "contacto@comercio1.com",
     "telefono": "123456789",
     "description": "a",
+    "city":"barcelona",
     "role": "merchant"
   },
   {
@@ -18,7 +19,20 @@
     "email": "a@a.es",
     "telefono": "123456789",
     "description": "hola\n",
+    "city":"barcelona",
     "role": "merchant",
     "id": 2
+  },
+  {
+    "name": "g",
+    "password": "$2a$10$Iyza0Zp9b5dVIk./LpmSc.x7iohXbpvt9wBUofvttpu2KqIDDSKFS",
+    "CIF": "g",
+    "direccion": "g",
+    "email": "g@g.es",
+    "telefono": "123456789",
+    "description": "gg",
+    "city": "madrid",
+    "role": "merchant",
+    "id": 3
   }
 ]

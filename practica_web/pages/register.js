@@ -77,12 +77,12 @@ const RegisterPage = () => {
                     onChange={handleChange}
                     required
                 /><input
-                type="city"
-                name="city"
-                placeholder="city"
-                value={formData.city}
-                onChange={handleChange}
-                required
+                    type="city"
+                    name="city"
+                    placeholder="city"
+                    value={formData.city}
+                    onChange={handleChange}
+                    required
                 />
                 <select 
                     name="role" 
@@ -100,6 +100,7 @@ const RegisterPage = () => {
             <label>Nombre:{jsondata.name}</label><br/>
             <label>Password:{jsondata.password}</label><br/>
             <label>Email:{jsondata.email}</label><br/>
+            <label>ciudad:{jsondata.city}</label><br/>
             <label>rol:{jsondata.role}</label>
         </div>
     );
